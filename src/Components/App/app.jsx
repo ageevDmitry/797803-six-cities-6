@@ -12,16 +12,27 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Main offersCount={offersCount}/>
-        </Route>
         <Route exact path="/login">
           <Login/>
+        </Route>
+        <Route exact path="/">
+          <Main offersCount={offersCount}/>
         </Route>
         <Route exact path="/favorites">
           <Favorites/>
         </Route>
         <Route path="/offer/:id" exact component={Room}/>
+        <Route
+          render={() => (
+            <>
+              <h1>
+                404.
+                <br />
+                <small>Page not found</small>
+              </h1>
+            </>
+          )}
+        />
       </Switch>
     </BrowserRouter>
   );
